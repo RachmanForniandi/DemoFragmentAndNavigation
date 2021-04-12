@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -22,5 +22,9 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.fragment)
 
         NavigationUI.setupActionBarWithNavController(this,navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController,null)
     }
 }
