@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.example.demofragmentandnavigation.databinding.FragmentVerifyDetailsBinding
 
 
@@ -19,13 +20,18 @@ class VerifyDetailsFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentVerifyDetailsBinding.inflate(inflater,container,false)
 
-        val getName =arguments?.getString("nama")
-        val getOccupation = arguments?.getString("pekerjaan")
-        val getNoPhone =arguments?.getLong("no_hp")
+        val args : VerifyDetailsFragmentArgs by navArgs()
+        val name = args.nama
+        val pekerjaan = args.pekerjaan
+        val noPhone = args.noHp
 
-        binding.tvName.text = getName
-        binding.tvMobileNumber.text = getNoPhone.toString()
-        binding.tvOccupation.text = getOccupation
+        /*val getName =arguments?.getString("nama")
+        val getOccupation = arguments?.getString("pekerjaan")
+        val getNoPhone =arguments?.getLong("no_hp")*/
+
+        binding.tvName.text = name
+        binding.tvMobileNumber.text = noPhone.toString()
+        binding.tvOccupation.text = pekerjaan
 
         return binding.root
     }

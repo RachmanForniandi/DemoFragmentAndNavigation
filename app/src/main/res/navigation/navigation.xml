@@ -18,5 +18,18 @@
         android:id="@+id/verifyDetailsFragment"
         android:name="com.example.demofragmentandnavigation.VerifyDetailsFragment"
         android:label="fragment_verify_details"
-        tools:layout="@layout/fragment_verify_details" />
+        tools:layout="@layout/fragment_verify_details">
+        <argument
+            android:name="nama"
+            app:argType="string"
+            android:defaultValue='""'/>
+        <argument
+            android:name="pekerjaan"
+            app:argType="string"
+            android:defaultValue='""'/>
+        <argument
+            android:name="no_hp"
+            app:argType="long"
+            android:defaultValue="0L"/>
+    </fragment>
 </navigation>

@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.demofragmentandnavigation.databinding.FragmentEnterDetailsBinding
 
@@ -39,12 +38,19 @@ class EnterDetailsFragment : Fragment() {
                     Toast.makeText(activity, "Mohon isi no Handphone", Toast.LENGTH_SHORT).show()
                 }
                 else->{
-                    val bundle = bundleOf(
+                   /* val bundle = bundleOf(
                             "nama" to inputName,
                             "pekerjaan" to inputJob,
                             "no_hp" to inputNoPhone.toLong()
                     )
-                    findNavController().navigate(R.id.action_enterDetailsFragment_to_verifyDetailsFragment,bundle)
+                    findNavController().navigate(R.id.action_enterDetailsFragment_to_verifyDetailsFragment,bundle)*/
+                    findNavController().navigate(
+                            EnterDetailsFragmentDirections.actionEnterDetailsFragmentToVerifyDetailsFragment(
+                                    inputName,
+                                    inputJob,
+                                    inputNoPhone.toLong()
+                            )
+                    )
                 }
             }
 
